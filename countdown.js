@@ -1,5 +1,5 @@
 (function () {
-  var deadline = new Date("2026-07-01T00:00:00+08:00").getTime();
+  var deadline = new Date("2026-08-01T00:00:00+08:00").getTime();
 
   function pad(value) {
     return String(value).padStart(2, "0");
