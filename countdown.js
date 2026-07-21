@@ -1,5 +1,7 @@
 (function () {
   var deadline = new Date("2026-08-01T00:00:00+08:00").getTime();
+  var countdownInterval;
+  var fixBottomInterval;
 
   function pad(value) {
     return String(value).padStart(2, "0");
@@ -37,6 +39,10 @@
 
     if (distance <= 0) {
       timerEl.textContent = "優惠已結束";
+
+      clearInterval(countdownInterval);
+      clearInterval(fixBottomInterval);
+
       return;
     }
 
@@ -53,8 +59,10 @@
 
   function initCountdown() {
     updateCountdown();
-    setInterval(updateCountdown, 1000);
-    setInterval(function () {
+
+    countdownInterval = setInterval(updateCountdown, 1000);
+
+    fixBottomInterval = setInterval(function () {
       forceFixBottom(document.querySelector(".fix-bottom"));
     }, 500);
   }
