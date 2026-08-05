@@ -1,5 +1,5 @@
 (function () {
-  var deadline = new Date("2026-08-01T00:00:00+08:00").getTime();
+  var deadline = new Date("2026-08-11T00:00:00+08:00").getTime();
   var countdownInterval;
   var fixBottomInterval;
 
